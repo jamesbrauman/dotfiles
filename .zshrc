@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/james/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +53,7 @@ plugins=(git rails docker colored-man-pages dirhistory docker)
 
 # User configuration
 
-export PATH="/Users/james/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="~/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -83,19 +83,30 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# commend exists
+command_exists () {
+  type "$1" &> /dev/null ;
+}
+
 # rbenv
-eval "$(rbenv init -)"
+if [ -d "~/.rbenv" ]; then
+  eval "$(rbenv init -)"
+fi
 
 # nvm
-export NVM_DIR="/Users/james/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+if [ -d "~/.nvm" ]; then
+  export NVM_DIR="~/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+fi
 
 # dirhistory
 bindkey "^[^[[1~" dirhistory_zle_dirhistory_back
 bindkey "^[^[[4~" dirhistory_zle_dirhistory_future
 
 # hub
-eval "$(hub alias -s)"
+if command_exists hub; then
+  eval "$(hub alias -s)"
+fi
 
 # alias
 alias nano="vim" # bad james
