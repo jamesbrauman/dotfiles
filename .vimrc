@@ -37,6 +37,9 @@ syntax on
 " set vim colorscheme
 colorscheme solarized
 
+" make sure the background is dark.
+set background=dark
+
 " make vim backspace over linebreaks too
 set backspace=2
 
