@@ -16,6 +16,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'Raimondi/delimitMate'
 Plugin 'othree/html5.vim'
 Plugin 'scrooloose/nerdtree'
@@ -150,6 +151,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " enable css and html highlighting in js files
 let javascript_enable_domhtmlcss = 1
+
+" jsx syntax highlighting and indentation for js files
+let g:jsx_ext_required = 0
 
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
