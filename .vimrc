@@ -155,6 +155,9 @@ let javascript_enable_domhtmlcss = 1
 " jsx syntax highlighting and indentation for js files
 let g:jsx_ext_required = 0
 
+" auto expanding carriage returns with delimitMate
+let delimitMate_expand_cr = 1
+
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
