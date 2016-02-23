@@ -6,6 +6,7 @@ export LANG=en_US.UTF-8
 # zsh configuration
 ZSH_THEME="fwalch"
 HYPHEN_INSENSITIVE="true"
+DISABLE_AUTO_TITLE="true"
 
 # zsh plugins
 plugins=(git rails docker colored-man-pages docker)
