@@ -38,6 +38,9 @@ syntax on
 " set vim colorscheme
 colorscheme solarized
 
+" set solarized high contrast diffs on
+let g:solarized_diffmode="high"
+
 " make sure the background is dark.
 set background=dark
 
@@ -99,6 +102,9 @@ set ttyfast
 
 " minimum number of screen lines to keep above and below cursor
 set scrolloff=5
+
+" set the height of the preview window
+set previewheight=20
 
 " disable the up arrow key in normal mode
 noremap <Up> <NOP>
@@ -193,3 +199,12 @@ endfunction
 
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
+
+" make sure the preview window height is always previewheight
+au BufEnter ?* call PreviewHeightWorkAround()
+func PreviewHeightWorkAround()
+  if &previewwindow
+    exec 'setlocal winheight='.&previewheight
+  endif
+endfunc
+
