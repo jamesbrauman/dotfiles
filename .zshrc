@@ -33,6 +33,8 @@ if [ -d "$HOME/.rbenv" ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   export PATH="$HOME/.rbenv/shims:$PATH"
   eval "$(rbenv init -)"
+
+  bx () { if [[ $1 == "bp" ]]; then command shift && $HOME/.rbenv/shims/bundle exec bluepill --no-privileged "$@"; else command $HOME/.rbenv/shims/bundle exec "$@"; fi; }
 fi
 
 # nvm
