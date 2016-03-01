@@ -18,6 +18,11 @@ source $ZSH/oh-my-zsh.sh
 alias nano="vim" # bad james
 alias tmux="TERM=xterm-256color tmux" # moar colorz
 
+# more aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # command exists
 command_exists () {
   type "$1" &> /dev/null
@@ -27,6 +32,11 @@ command_exists () {
 directory_exists() {
   -d "$1"
 }
+
+# common things
+if [ -f /vagrant/common.rc ]; then
+  . /vagrant/common.rc
+fi
 
 # rbenv
 if [ -d "$HOME/.rbenv" ]; then
