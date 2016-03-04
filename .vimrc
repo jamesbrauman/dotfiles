@@ -22,6 +22,7 @@ Plugin 'othree/html5.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'rking/ag.vim'
+Plugin 'kchmck/vim-coffee-script'
 
 " end vundle initialization
 call vundle#end()
