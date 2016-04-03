@@ -7,10 +7,11 @@ filetype off
 " set runtime path to include vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 
+set rtp+=~/.fzf
+
 " initialize vundle
 call vundle#begin()
 
-Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
@@ -153,6 +154,8 @@ nnoremap <C-l> <C-w>l
 " the command NT opens nerdtree
 command NT NERDTree
 
+map <C-p> :FZF!<CR>
+
 "remove trailing white space
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -164,12 +167,6 @@ let g:jsx_ext_required = 0
 
 " auto expanding carriage returns with delimitMate
 let delimitMate_expand_cr = 1
-
-" Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
 
 let g:lightline = {
   \ 'colorscheme': 'solarized',
