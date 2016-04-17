@@ -3,6 +3,9 @@ export ZSH=~/.oh-my-zsh
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export LANG=en_US.UTF-8
 
+# fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
 # zsh configuration
 ZSH_THEME="fwalch"
 HYPHEN_INSENSITIVE="true"

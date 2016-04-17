@@ -154,7 +154,7 @@ nnoremap <C-l> <C-w>l
 " the command NT opens nerdtree
 command NT NERDTree
 
-map <C-p> :FZF!<CR>
+map <C-p> :FZF<CR>
 
 "remove trailing white space
 autocmd BufWritePre * :%s/\s\+$//e
