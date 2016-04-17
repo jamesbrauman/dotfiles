@@ -1,6 +1,9 @@
 " set vim compatability off to enable more features
 set nocompatible
 
+" remove timeout delays
+set timeoutlen=1000 ttimeoutlen=0
+
 " turn filetype off before loading vundle
 filetype off
 
