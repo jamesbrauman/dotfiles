@@ -127,9 +127,6 @@ noremap <Right> <NOP>
 " disable arrows in nerdtree
 let g:NERDTreeDirArrows=0
 
-" set the emmet leader key to ctrl e
-let g:user_emmet_leader_key='<C-E>'
-
 " highlight currnet line when entering insert mode
 autocmd InsertEnter * set cul
 
