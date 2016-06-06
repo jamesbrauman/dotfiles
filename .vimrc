@@ -27,6 +27,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'rking/ag.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'scrooloose/nerdcommenter'
 
 " end vundle initialization
 call vundle#end()
