@@ -155,7 +155,11 @@ nnoremap <C-l> <C-w>l
 " the command NT opens nerdtree
 command NT NERDTree
 
+" fuzzy finder
 map <C-p> :FZF<CR>
+
+" nerd tree find
+map <C-n> :NERDTreeFind<CR>
 
 "remove trailing white space
 autocmd BufWritePre * :%s/\s\+$//e
