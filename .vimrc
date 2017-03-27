@@ -15,19 +15,24 @@ set rtp+=~/.fzf
 " initialize vundle
 call vundle#begin()
 
+let base16colorspace=256
+
 Plugin 'mattn/emmet-vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'Raimondi/delimitMate'
 Plugin 'othree/html5.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'rking/ag.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'chriskempson/base16-vim'
+Plugin 'easymotion/vim-easymotion'
 
 " end vundle initialization
 call vundle#end()
@@ -142,9 +147,9 @@ let g:syntastic_check_on_wq = 0
 
 " Return to last edit position when opening files
 autocmd BufReadPost *
-   \ if line("'\"") > 0 && line("'\"") <= line("$") |
-   \   exe "normal! g`\"" |
-   \ endif
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
 
 " move around splits using vim keys while holding ctrl
 nnoremap <C-j> <C-w>j
@@ -174,30 +179,30 @@ let g:jsx_ext_required = 0
 let delimitMate_expand_cr = 1
 
 let g:lightline = {
-  \ 'colorscheme': 'solarized',
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'fugitive', 'filename' ] ]
-  \ },
-  \ 'component': {
-  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-  \ },
-  \ 'component_visible_condition': {
-  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-  \ }
-  \ }
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component': {
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
 
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
 set wildmode=list:longest,list:full
 function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
 endfunction
 
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
@@ -211,3 +216,4 @@ func PreviewHeightWorkAround()
   endif
 endfunc
 
+let mapleader = "\<Space>"

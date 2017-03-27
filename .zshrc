@@ -56,3 +56,27 @@ if [ -d "$HOME/.nvm" ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
   nvm alias default node &> /dev/null
 fi
+
+function ssh-staging {
+  eval $(keymaker remoter ssh staging --user jamesbrauman)
+}
+
+function ssh-staging-c {
+  eval $(keymaker remoter ssh staging --user jamesbrauman --container-cmd='bundle exec rails c')
+}
+
+function ssh-staging-d {
+  eval $(keymaker remoter ssh staging --user jamesbrauman --container-cmd=bash)
+}
+
+function ssh-prod {
+  eval $(keymaker remoter ssh production-scheduler --user jamesbrauman)
+}
+
+function ssh-prod-c {
+  eval $(keymaker remoter ssh production-scheduler --user jamesbrauman --container-cmd='bundle exec rails c')
+}
+
+function ssh-prod-d {
+  eval $(keymaker remoter ssh production-scheduler --user jamesbrauman --container-cmd=bash)
+}
