@@ -56,3 +56,5 @@ if [ -d "$HOME/.nvm" ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
   nvm alias default node &> /dev/null
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
